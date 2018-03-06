@@ -42,7 +42,7 @@ class App extends Component {
             </header>
             <p className="App-intro">
                 { this.state.blogPosts.map(function(blogPost, index) {
-                    return <li key={ index }>{blogPost['title']}</li>;
+                    return <BlogPost index={index} title={blogPost['title']} />
                 })}
             </p>
           </div>

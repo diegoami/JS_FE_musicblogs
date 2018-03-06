@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import App from "./App";
 
 class BlogPost extends React.Component {
     render() {
-        return <h1>Hello, {this.props.name}</h1>;
+        return <li key={ this.props.index }>{this.props.title}</li>;
     }
 }
 
+export default BlogPost;

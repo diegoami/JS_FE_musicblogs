@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import BlogPost from  './BlogPost.js';
+
 
 class App extends Component {
 
@@ -8,7 +10,7 @@ class App extends Component {
         super();
 
         this.state = {
-            titles: [],
+            blogPosts: [],
             loading: false
         };
     }
@@ -21,11 +23,11 @@ class App extends Component {
         fetch('http://localhost:3001/italian/')
             .then(res => res.json())
             .then(data => {
-                var titles  = Object.keys(data).map(function (i) {
-                    return data[i]['title'] + '\n';
+                var blogPosts = Object.keys(data).map(function (i) {
+                    return data[i];
                 });
                 this.setState({
-                    titles : titles,
+                    blogPosts : blogPosts,
                     loading: false
                 });
             })
@@ -39,8 +41,8 @@ class App extends Component {
               <h1 className="App-title">Welcome to React</h1>
             </header>
             <p className="App-intro">
-                { this.state.titles.map(function(title, index){
-                    return <li key={ index }>{title}</li>;
+                { this.state.blogPosts.map(function(blogPost, index) {
+                    return <li key={ index }>{blogPost['title']}</li>;
                 })}
             </p>
           </div>

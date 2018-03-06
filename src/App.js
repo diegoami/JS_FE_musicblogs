@@ -42,7 +42,8 @@ class App extends Component {
             </header>
             <p className="App-intro">
                 { this.state.blogPosts.map(function(blogPost, index) {
-                    return <BlogPost index={index} title={blogPost['title']} />
+                    return <BlogPost index={index} title={blogPost['title']} content={blogPost['content']} />
+
                 })}
             </p>
           </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import App from "./App";
+import './BlogPost.css';
 
 class BlogPost extends React.Component {
 
@@ -30,20 +30,37 @@ class BlogPost extends React.Component {
 
     render() {
         let content = ""
+        let youtube = ""
+
         if (this.state.isToggleOn) {
             content = this.state.content
-        }
+            let linkYoutube  = 'https://www.youtube.com/embed/'+this.props.videoId+'?ecver=1'
+            youtube = <iframe title={ this.props.title } width="854" height="480" src={ linkYoutube } frameborder="0"  allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+        }
         return (
-            <div >
+            <div id="container">
                 <p>
                     <a href="#" onClick={this.handleClick}>
-                        <span key={ this.props.index }>{ this.props.title }</span>
+                        <span key={ this.props.index }>{ this.props.title } ( { this.props.videoId } )</span>
                     </a>
                 </p>
-                <p class="content">
-                    { content }
-                </p>
+                <table>
+                    <col width="20%"/>
+                    <col width="80%"/>
+                    <tr>
+                        <td>
+                            <p class="content">
+                                { content }
+                            </p>
+                        </td>
+                        <td>
+
+                            {youtube}
+                        </td>
+                    </tr>
+
+                </table>
             </div>
         )
     }

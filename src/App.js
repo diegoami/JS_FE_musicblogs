@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import BlogPost from  './BlogPost.js';
-
+import LinkPost from './LinkPost.js';
+import PostList from './PostList.js';
 
 class App extends Component {
 
@@ -42,7 +42,7 @@ class App extends Component {
             </header>
             <p className="App-intro">
                 { this.state.blogPosts.map(function(blogPost, index) {
-                    return <BlogPost index={index} title={blogPost['title']} content={blogPost['content']} videoId={blogPost['videoId']}  />
+                    return <LinkPost index={index} title={blogPost['title']} content={blogPost['content']} videoId={blogPost['videoId']}  />
 
                 })}
             </p>

@@ -5,21 +5,10 @@ class BlogPost extends React.Component {
 
     constructor() {
         super();
-
-
         this.state = {
             content: "",
-            isToggleOn: false
         };
-        this.handleClick = this.handleClick.bind(this);
     }
-
-    handleClick( ) {
-        this.setState(prevState => ({
-            isToggleOn: !prevState.isToggleOn
-        }));
-    }
-
 
     componentDidMount() {
         this.setState({
@@ -32,19 +21,11 @@ class BlogPost extends React.Component {
         let content = ""
         let youtube = ""
 
-        if (this.state.isToggleOn) {
-            content = this.state.content
-            let linkYoutube  = 'https://www.youtube.com/embed/'+this.props.videoId+'?ecver=1'
-            youtube = <iframe title={ this.props.title } width="854" height="480" src={ linkYoutube } frameborder="0"  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        content = this.state.content
+        let linkYoutube  = 'https://www.youtube.com/embed/'+this.props.videoId+'?ecver=1'
+        youtube = <iframe title={ this.props.title } width="854" height="480" src={ linkYoutube } frameborder="0"  allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-        }
         return (
-            <div id="container">
-                <p>
-                    <a href="#" onClick={this.handleClick}>
-                        <span key={ this.props.index }>{ this.props.title } ( { this.props.videoId } )</span>
-                    </a>
-                </p>
                 <table>
                     <col width="20%"/>
                     <col width="80%"/>
@@ -61,10 +42,8 @@ class BlogPost extends React.Component {
 
                         </td>
                     </tr>
-
                 </table>
-            </div>
-        )
+            )
     }
 }
 

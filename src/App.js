@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import LinkPost from './LinkPost.js';
-import PostList from './PostList.js';
+
 
 class App extends Component {
 
@@ -20,7 +20,7 @@ class App extends Component {
             loading: true
         });
 
-        fetch('http://localhost:3001/italian/')
+        fetch('http://localhost:3001/french/')
             .then(res => res.json())
             .then(data => {
                 var blogPosts = Object.keys(data).map(function (i) {

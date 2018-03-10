@@ -55,8 +55,10 @@ class BlogPost extends React.Component {
                             </p>
                         </td>
                         <td>
+                            <div class="videoWrapper">
+                                {youtube}
+                            </div>
 
-                            {youtube}
                         </td>
                     </tr>
 

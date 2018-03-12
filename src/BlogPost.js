@@ -5,25 +5,22 @@ class BlogPost extends React.Component {
 
     constructor() {
         super();
-        this.state = {
-            content: "",
-        };
+
     }
 
     componentDidMount() {
         this.setState({
-            content : this.props.content.replace(/\n\s*\n/g, '\n'),
+
             isToggleOn: false
         });
     }
 
     render() {
-        let content = ""
-        let youtube = ""
 
-        content = this.state.content
+        let youtube = ""
+        let content = this.props.content.replace(/\n\s*\n/g, '\n')
         let linkYoutube  = 'https://www.youtube.com/embed/'+this.props.videoId+'?ecver=1'
-        youtube = <iframe title={ this.props.title } width="854" height="480" src={ linkYoutube } frameborder="0"  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        youtube = <iframe title={ this.props.title } width="854" height="480" src={ linkYoutube } frameBorder="0"  allow="autoplay; encrypted-media" allowFullScreen></iframe>
 
         return (
                 <table>

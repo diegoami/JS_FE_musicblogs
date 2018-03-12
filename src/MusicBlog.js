@@ -61,7 +61,7 @@ class MusicBlog extends Component {
               </select>
               {(currentBlogPost != null) &&
                   <p className="App-intro">
-                        <BlogPost index={this.state.currentBlogPostIndex} title={currentBlogPost['title']} content={currentBlogPost['content']} videoId={currentBlogPost['videoId']}  />
+                        <BlogPost index={this.state.currentBlogPostIndex} {...currentBlogPost}  />
                   </p>
               }
           </div>

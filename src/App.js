@@ -2,22 +2,27 @@ import React, { Component } from 'react';
 
 import MusicBlog from './MusicBlog.js';
 import ReactDOM from "react-dom";
-import { Router, Route, Switch } from 'react-router'
+
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
 
 
     render() {
         return (
-          <div className="App">
-              <MusicBlog url="russian" />
-              <MusicBlog url="polish" />
-              <MusicBlog url="southslavic" />
-              <MusicBlog url="romanian" />
+            <Router>
+              <div className="App">
+                  <Route path={'/:blogLng'} component={MusicBlogDrv} />
 
-          </div>
+              </div>
+            </Router>
     );
   }
 }
+
+const MusicBlogDrv = ({ match }) => (
+   <MusicBlog url={match.params.blogLng} />
+);
+
 
 export default App;

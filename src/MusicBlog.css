@@ -1,8 +1,7 @@
-.App {
-  text-align: left;
+MusicBlog-post {
+  padding-top: 10px;
 }
 
-.App-title {
-  font-size: 1.5em;
+#songsSelect {
+  background-color: lightgray;
 }
-

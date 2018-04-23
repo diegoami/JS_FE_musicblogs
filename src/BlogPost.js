@@ -23,17 +23,17 @@ class BlogPost extends React.Component {
         youtube = <iframe title={ this.props.title } width="854" height="480" src={ linkYoutube } frameBorder="0"  allow="autoplay; encrypted-media" allowFullScreen></iframe>
 
         return (
-                <table>
+                <table className="blogPostTable">
                     <col width="20%"/>
                     <col width="80%"/>
                     <tr>
                         <td>
-                            <p class="content">
+                            <p className="content">
                                 { content }
                             </p>
                         </td>
                         <td>
-                            <div class="videoWrapper">
+                            <div className="videoWrapper">
                                 {youtube}
                             </div>
 

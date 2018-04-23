@@ -2,6 +2,11 @@
     text-align: left;
 }
 
+.blogPostTable {
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
 .videoWrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */

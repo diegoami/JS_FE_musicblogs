@@ -31,7 +31,7 @@ class LinkPost extends React.Component {
         let blogPost = ""
 
         if (this.state.isToggleOn) {
-            blogPost =  <BlogPost index={ this.props.index } title={ this.props.title } content={ this.props.content } videoId={ this.props.videoId } />
+            blogPost =  <BlogPost index={ this.props.index } title={ this.props.title } content={ this.props.content } videoId={ this.props.videoId } amara_embed={ this.props.amara_embed } />
         }
         return (
             <div id="container">

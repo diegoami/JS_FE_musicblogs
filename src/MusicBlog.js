@@ -14,13 +14,14 @@ class MusicBlog extends Component {
         super();
         this.state = {
             blogPosts: [],
+            artists: [],
             currentBlogPostIndex : -1,
+            currentArtistIndex : -1,
             loading: false,
             dropdownOpen: false
         };
         this.endpoint = process.env.REACT_APP_NODE_ENDPOINT
-        this.toggle = this.toggle.bind(this);
-        this.select= this.select.bind(this);
+
     }
 
     change = e => {
@@ -28,18 +29,9 @@ class MusicBlog extends Component {
 
     }
 
-    select = e => {
-        this.setState({currentBlogPostIndex: e.target.value});
+    a_change = e => {
+        this.setState({currentArtistIndex: e.target.value});
 
-    }
-
-    toggle = e => {
-        this.setState(prevState => ({
-            dropdownOpen: !prevState.dropdownOpen,
-            blogPosts : prevState.blogPosts,
-            currentBlogPostIndex : prevState.currentBlogPostIndex,
-            loading: prevState.loading
-        }));
     }
 
     componentDidMount() {
@@ -57,9 +49,14 @@ class MusicBlog extends Component {
                 var blogPosts = Object.keys(data["posts"]).map(function (i) {
                     return data["posts"][i];
                 });
+                var artists = Object.keys(data["labels"]).map(function (i) {
+                    return data["labels"][i];
+                });
                 this.setState({
                     blogPosts : blogPosts,
+                    artists: artists,
                     currentBlogPostIndex : -1,
+                    currentArtistIndex : -1,
                     loading: false
                 });
             })
@@ -86,6 +83,17 @@ class MusicBlog extends Component {
                               })}
                               </select>
                           </div>
+                          <div className="col-1">
+                              <label htmlFor="artistsSelect">Artists: </label>
+                          </div>
+                          <div className="col-4">
+                              <select id="artistsSelect" className="form-control" onChange={this.a_change} value={this.state.currentArtistIndex} >
+                                  { this.state.artists.map(function(artist, index) {
+                                      return <option value={index}> { artist[0] } ( { artist[1] } )   </option>
+                                  })}
+                              </select>
+                          </div>
+
                       </div>
                    </div>
               {(currentBlogPost != null) &&

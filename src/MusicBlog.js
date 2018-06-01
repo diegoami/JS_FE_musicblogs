@@ -7,7 +7,10 @@ import BlogPost from './BlogPost.js';
 import ReactDOM from "react-dom";
 import { Router, Route, Switch } from 'react-router'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from 'reactstrap';
-
+import Select from 'react-virtualized-select';
+import 'react-select/dist/react-select.css';
+import 'react-virtualized/styles.css'
+import 'react-virtualized-select/styles.css'
 class MusicBlog extends Component {
 
     constructor() {
@@ -25,7 +28,7 @@ class MusicBlog extends Component {
     }
 
     change = e => {
-        this.setState({currentBlogPostIndex: e.target.value, currentBlogPost: this.state.blogPosts[e.target.value]  });
+        this.setState({currentBlogPostIndex: e.value, currentBlogPost: this.state.blogPosts[e.value]  });
 
     }
 
@@ -62,6 +65,8 @@ class MusicBlog extends Component {
 
     render() {
         let currentBlogPost = this.state.blogPosts[this.state.currentBlogPostIndex]
+        let options = this.state.blogPosts.map(function(blogPost, index) { return { value: index, label: blogPost['title']  } })
+
         return (
           <div className="MusicBlog">
             <header className="MusicBlog-header">
@@ -75,11 +80,9 @@ class MusicBlog extends Component {
                           </div>
                           <div className="col-4">
 
-                              <select id="songsSelect" className="form-control" onChange={this.change} value={this.state.currentBlogPostIndex} >
-                              { this.state.blogPosts.map(function(blogPost, index) {
-                                  return <option value={index}> { blogPost['title'] }  </option>
-                              })}
-                              </select>
+                              <Select id="songsSelect" className="form-control" options={options} onChange={this.change} value={this.state.currentBlogPostIndex} >
+
+                              </Select>
                           </div>
                           <div className="col-2">
 

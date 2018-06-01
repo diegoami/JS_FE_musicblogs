@@ -24,20 +24,21 @@ class BlogPost extends React.Component {
 
         return (
                 <table className="blogPostTable">
-                    <col width="20%"/>
-                    <col width="80%"/>
+                    <col width="85%"/>
+                    <col width="15%"/>
                     <tr>
-                        <td>
-                            <p className="content">
-                                { content }
-                            </p>
-                        </td>
                         <td>
                             <div className="videoWrapper">
                                 {youtube}
                             </div>
 
                         </td>
+                        <td>
+                            <p className="content">
+                                { content }
+                            </p>
+                        </td>
+
                     </tr>
                 </table>
             )

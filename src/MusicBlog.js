@@ -6,7 +6,7 @@ import LinkPost from './LinkPost.js';
 import BlogPost from './BlogPost.js';
 import ReactDOM from "react-dom";
 import { Router, Route, Switch } from 'react-router'
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from 'reactstrap';
 
 class MusicBlog extends Component {
 
@@ -16,7 +16,7 @@ class MusicBlog extends Component {
             blogPosts: [],
             artists: [],
             currentBlogPostIndex : -1,
-            currentArtistIndex : -1,
+            currentBlogPost: null,
             loading: false,
             dropdownOpen: false
         };
@@ -25,14 +25,12 @@ class MusicBlog extends Component {
     }
 
     change = e => {
-        this.setState({currentBlogPostIndex: e.target.value});
+        this.setState({currentBlogPostIndex: e.target.value, currentBlogPost: this.state.blogPosts[e.target.value]  });
 
     }
 
-    a_change = e => {
-        this.setState({currentArtistIndex: e.target.value});
 
-    }
+
 
     componentDidMount() {
         this.setState({
@@ -55,8 +53,8 @@ class MusicBlog extends Component {
                 this.setState({
                     blogPosts : blogPosts,
                     artists: artists,
-                    currentBlogPostIndex : -1,
-                    currentArtistIndex : -1,
+                    currentBlogPostIndex :0,
+                    currentBlogPost: this.state.blogPosts[0],
                     loading: false
                 });
             })
@@ -83,16 +81,13 @@ class MusicBlog extends Component {
                               })}
                               </select>
                           </div>
-                          <div className="col-1">
-                              <label htmlFor="artistsSelect">Artists: </label>
+                          <div className="col-2">
+
+                              <Button  bsStyle="primary" bsSize="large" onClick={() => {if (this.state.currentBlogPostIndex > -1) window.open(this.state.blogPosts[this.state.currentBlogPostIndex]   ["url"], "_blank")}}  >
+                                   Go to blog post
+                              </Button>
                           </div>
-                          <div className="col-4">
-                              <select id="artistsSelect" className="form-control" onChange={this.a_change} value={this.state.currentArtistIndex} >
-                                  { this.state.artists.map(function(artist, index) {
-                                      return <option value={index}> { artist[0] } ( { artist[1] } )   </option>
-                                  })}
-                              </select>
-                          </div>
+
 
                       </div>
                    </div>

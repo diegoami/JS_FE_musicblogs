@@ -28,7 +28,8 @@ class MusicBlog extends Component {
     }
 
     change = e => {
-        this.setState({currentBlogPostIndex: e.value, currentBlogPost: this.state.blogPosts[e.value]  });
+        if (e)
+            this.setState({currentBlogPostIndex: e.value });
 
     }
 
@@ -56,8 +57,7 @@ class MusicBlog extends Component {
                 this.setState({
                     blogPosts : blogPosts,
                     artists: artists,
-                    currentBlogPostIndex :0,
-                    currentBlogPost: this.state.blogPosts[0],
+                    currentBlogPostIndex: Math.floor(Math.random()*blogPosts.length),
                     loading: false
                 });
             })
@@ -70,7 +70,7 @@ class MusicBlog extends Component {
         return (
           <div className="MusicBlog">
             <header className="MusicBlog-header">
-              <h1 className="MusicBlog-title">{this.props.url}</h1>
+              <h1 className="MusicBlog-title">{this.props.url.charAt(0).toUpperCase() + this.props.url.slice(1)} pop music.</h1>
             </header>
                   <div className="form-group">
 

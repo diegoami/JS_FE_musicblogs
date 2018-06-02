@@ -34,6 +34,11 @@ class MusicBlog extends Component {
     }
 
 
+    random_post = e => {
+        this.setState(prevState => ({
+            currentBlogPostIndex : Math.floor(Math.random()*prevState.blogPosts.length)
+        }))
+    }
 
 
     componentDidMount() {
@@ -66,7 +71,12 @@ class MusicBlog extends Component {
     render() {
         let currentBlogPost = this.state.blogPosts[this.state.currentBlogPostIndex]
         let options = this.state.blogPosts.map(function(blogPost, index) { return { value: index, label: blogPost['title']  } })
-
+        let subtitled = ""
+        if (this.state.currentBlogPostIndex > -1) {
+            if (this.state.blogPosts[this.state.currentBlogPostIndex]["labels"].includes('subtitled') || this.state.blogPosts[this.state.currentBlogPostIndex]["labels"].includes('SUBTITLED')) {
+                subtitled = "(subtitled)"
+            }
+        }
         return (
           <div className="MusicBlog">
             <header className="MusicBlog-header">
@@ -84,10 +94,17 @@ class MusicBlog extends Component {
 
                               </Select>
                           </div>
-                          <div className="col-2">
+                          <div className="col-1">
 
-                              <Button  bsStyle="primary" bsSize="large" onClick={() => {if (this.state.currentBlogPostIndex > -1) window.open(this.state.blogPosts[this.state.currentBlogPostIndex]   ["url"], "_blank")}}  >
-                                   Go to blog post
+                              <Button  bsStyle="primary" bsSize="large" onClick={() => {if (this.state.currentBlogPostIndex > -1) window.open(this.state.blogPosts[this.state.currentBlogPostIndex]["url"], "_blank")}}  >
+                                   Blog post {subtitled}
+                              </Button>
+
+
+                          </div>
+                          <div className="col-1">
+                              <Button  bsStyle="secondary" bsSize="large" onClick={this.random_post}  >
+                                  Random
                               </Button>
                           </div>
 

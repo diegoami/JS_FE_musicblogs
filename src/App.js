@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import MusicBlog from './MusicBlog.js';
 import { Nav, NavItem, Navbar, NavbarBrand, NavLink } from 'reactstrap';
-
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import './App.css';
 
 class App extends Component {
-
 
     render() {
         return (
@@ -44,6 +43,7 @@ class App extends Component {
               </div>
             </Router>
             </div>
+
     );
   }
 }

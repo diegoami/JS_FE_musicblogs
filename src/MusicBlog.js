@@ -73,7 +73,7 @@ class MusicBlog extends Component {
         let options = this.state.blogPosts.map(function(blogPost, index) { return { value: index, label: blogPost['title']  } })
         let subtitled = ""
         if (this.state.currentBlogPostIndex > -1) {
-            if (this.state.blogPosts[this.state.currentBlogPostIndex]["labels"].includes('subtitled') || this.state.blogPosts[this.state.currentBlogPostIndex]["labels"].includes('SUBTITLED')) {
+            if (this.state.blogPosts[this.state.currentBlogPostIndex]["subtitled"]) {
                 subtitled = "(subtitled)"
             }
         }

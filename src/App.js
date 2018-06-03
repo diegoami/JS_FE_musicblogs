@@ -28,10 +28,10 @@ class App extends Component {
                             <NavLink href="/romanian">Romanian</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/southslavic">South Slavic</NavLink>
+                            <NavLink href="/southslavic">Balkan</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/easteurope">East Europe</NavLink>
+                            <NavLink href="/easteurope">Central</NavLink>
                         </NavItem>
                     </Nav>
                 </p>

@@ -22,5 +22,11 @@
 }
 
 .content {
-    font-size: 1em;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto
+}
+textarea {
+    font-size: 0.8em;
 }

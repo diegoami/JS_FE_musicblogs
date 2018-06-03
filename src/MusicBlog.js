@@ -71,10 +71,10 @@ class MusicBlog extends Component {
     render() {
         let currentBlogPost = this.state.blogPosts[this.state.currentBlogPostIndex]
         let options = this.state.blogPosts.map(function(blogPost, index) { return { value: index, label: blogPost['title']  } })
-        let subtitled = ""
+        let subtitled = "Blog"
         if (this.state.currentBlogPostIndex > -1) {
             if (this.state.blogPosts[this.state.currentBlogPostIndex]["subtitled"]) {
-                subtitled = "(subtitled)"
+                subtitled = "Subtitles"
             }
         }
         return (
@@ -85,31 +85,25 @@ class MusicBlog extends Component {
                   <div className="form-group">
 
                       <div className="row">
-                          <div className="col-1">
-                            <label htmlFor="songsSelect">Songs: </label>
-                          </div>
-                          <div className="col-4">
+                          <div className="col-8">
 
                               <Select id="songsSelect" className="form-control" options={options} onChange={this.change} value={this.state.currentBlogPostIndex} >
 
                               </Select>
                           </div>
                           <div className="col-1">
-
-                              <Button  bsStyle="primary" bsSize="large" onClick={() => {if (this.state.currentBlogPostIndex > -1) window.open(this.state.blogPosts[this.state.currentBlogPostIndex]["url"], "_blank")}}  >
-                                   Blog post {subtitled}
+                              <Button  bsStyle="primary" bsSize="medium" onClick={() => {if (this.state.currentBlogPostIndex > -1) window.open(this.state.blogPosts[this.state.currentBlogPostIndex]["url"], "_blank")}}  >
+                                   {subtitled}
                               </Button>
-
-
                           </div>
                           <div className="col-1">
-                              <Button  bsStyle="secondary" bsSize="large" onClick={this.random_post}  >
+
+                              <Button  bsStyle="secondary" bsSize="medium" onClick={this.random_post}  >
                                   Random
                               </Button>
                           </div>
-
-
                       </div>
+
                    </div>
               {(currentBlogPost != null) &&
               <p className="MusicBlog-post">

@@ -25,21 +25,23 @@ class BlogPost extends React.Component {
         youtube = <iframe title={ this.props.title } src={ linkYoutube } frameBorder="0"  allow="autoplay; encrypted-media" allowFullScreen></iframe>
         let textarea =  <textarea disabled cols="35" rows="35"  value={content}></textarea>
         return (
-             <div className="row">
-                 <div className="col-8">
+            <div className="container-fluid">
+                 <div className="row">
+                     <div className="col-8">
 
-                            <div className="videoWrapper">
-                                {youtube}
-                            </div>
+                                <div className="videoWrapper">
+                                    {youtube}
+                                </div>
+                     </div>
+                     <div className="col-2">
+
+                        <div className="content">
+                                      { textarea }
+                        </div>
+                     </div>
+
                  </div>
-                 <div className="col-2">
-
-                    <div className="content">
-                                  { textarea }
-                    </div>
-                 </div>
-
-             </div>
+            </div>
             )
     }
 }

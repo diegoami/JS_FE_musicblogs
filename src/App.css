@@ -9,3 +9,32 @@ footer {
     font-size: 0.8em;
 
 }
+
+@media only screen and (max-width: 1024px) {
+    .nav-link {
+        display: block;
+        padding: .3rem 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .nav-link {
+        display: block;
+        padding: .3rem 0.4rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .nav-link {
+        display: block;
+        padding: .3rem 0.3rem;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .nav-link {
+        display: block;
+        padding: .3rem 0.2rem;
+    }
+}

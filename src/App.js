@@ -10,28 +10,28 @@ class App extends Component {
     render() {
         return (
             <div>
-                <p>Pick music:
+                <p>View music from:
                     <Nav tabs>
                         <NavItem>
-                            <NavLink href="/italian">Italian</NavLink>
+                            <NavLink href="/italian">Italy</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/russian">Russian</NavLink>
+                            <NavLink href="/russian">Russia/Ukraine</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/french">French</NavLink>
+                            <NavLink href="/french">France</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/polish">Polish</NavLink>
+                            <NavLink href="/polish">Poland</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/romanian">Romanian</NavLink>
+                            <NavLink href="/romanian">Romania</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/southslavic">Balkan</NavLink>
+                            <NavLink href="/southslavic">Balkans</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/easteurope">Central</NavLink>
+                            <NavLink href="/easteurope">Central Europe</NavLink>
                         </NavItem>
                     </Nav>
                 </p>

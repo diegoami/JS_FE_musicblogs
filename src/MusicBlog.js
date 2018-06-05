@@ -82,7 +82,7 @@ class MusicBlog extends Component {
             <header className="MusicBlog-header">
               <h1 className="MusicBlog-title">{this.props.url.charAt(0).toUpperCase() + this.props.url.slice(1)} pop music.</h1>
             </header>
-                  <div className="form-group">
+                  <div className="container-fluid">
 
                       <div className="row">
                           <div className="col-8">
@@ -92,13 +92,15 @@ class MusicBlog extends Component {
                               </Select>
                           </div>
                           <div className="col-1">
-                              <Button  bsStyle="primary" bsSize="medium" onClick={() => {if (this.state.currentBlogPostIndex > -1) window.open(this.state.blogPosts[this.state.currentBlogPostIndex]["url"], "_blank")}}  >
+                              <Button  bsStyle="primary" bsSize="small" onClick={() => {if (this.state.currentBlogPostIndex > -1) window.open(this.state.blogPosts[this.state.currentBlogPostIndex]["url"], "_blank")}}  >
                                    {subtitled}
                               </Button>
                           </div>
+
+                          <div className="col-1"></div>
                           <div className="col-1">
 
-                              <Button  bsStyle="secondary" bsSize="medium" onClick={this.random_post}  >
+                              <Button  bsStyle="secondary" bsSize="small" onClick={this.random_post}  >
                                   Random
                               </Button>
                           </div>

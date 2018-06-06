@@ -1,12 +1,53 @@
 MusicBlog-post {
-  padding-top: 10px;
+    padding-top: 10px;
 }
 
-#songsSelect {
-  background-color: lightgray;
+@media only screen and (max-width: 800px) {
+    .Select {
+        font-size: 1em;
+    }
+
+    .btn {
+        font-size: 1em;
+    }
 }
 
+@media only screen and (max-width: 700px) {
+    .Select {
+        font-size: 0.9em;
+    }
 
-#artistsSelect {
-  background-color: lightgray;
+    .btn {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Select {
+        font-size: 0.8em;
+    }
+
+    .btn {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .Select {
+        font-size: 0.7em;
+    }
+
+    .btn {
+        font-size: 0.7em;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .Select {
+        font-size: 0.6em;
+    }
+
+    .btn {
+        font-size: 0.7em;
+    }
 }

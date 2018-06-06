@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import MusicBlog from './MusicBlog.js';
+
 import MusicBlogDrv from './MusicBlogDrv.js';
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";

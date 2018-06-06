@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Nav, NavItem, Navbar, NavbarBrand, NavLink } from 'reactstrap';
+import './NavTab.css';
+
 class NavTab extends Component {
 
     render() {
         return (
             <div>
-                <p>View music from:
+                <p><h2>Select music from:</h2>
                     <Nav tabs>
                         <NavItem>
                             <NavLink href="/italian" active={this.props.active == 'italian'} >Italy</NavLink>

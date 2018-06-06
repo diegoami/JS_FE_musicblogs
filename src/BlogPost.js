@@ -10,20 +10,13 @@ class BlogPost extends React.Component {
 
     }
 
-    componentDidMount() {
-        this.setState({
-
-            isToggleOn: false
-        });
-    }
-
     render() {
 
-        let youtube = ""
+
         let content = this.props.content
         let linkYoutube  = 'https://www.youtube.com/embed/'+this.props.videoId+'?ecver=1'
-        youtube = <iframe title={ this.props.title } src={ linkYoutube } frameBorder="0"  allow="autoplay; encrypted-media" allowFullScreen></iframe>
-        let textarea =  <textarea disabled cols="35" rows="35"  value={content}></textarea>
+        let youtube = <iframe title={ this.props.title } src={ linkYoutube } frameBorder="0"  allow="autoplay; encrypted-media" allowFullScreen></iframe>
+        let textarea =  <textarea disabled cols="42" rows="35"  value={content}></textarea>
         return (
             <div className="container-fluid">
                  <div className="row">

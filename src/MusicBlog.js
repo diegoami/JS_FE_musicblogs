@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import logo from './logo.svg';
 import './MusicBlog.css';
-import LinkPost from './LinkPost.js';
+
 import BlogPost from './BlogPost.js';
-import ReactDOM from "react-dom";
-import { Router, Route, Switch } from 'react-router'
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from 'reactstrap';
+
+import { Button } from 'reactstrap';
 import Select from 'react-virtualized-select';
 import 'react-select/dist/react-select.css';
 import 'react-virtualized/styles.css'
@@ -79,15 +77,12 @@ class MusicBlog extends Component {
         }
         return (
           <div className="MusicBlog">
-            <header className="MusicBlog-header">
-              <h1 className="MusicBlog-title">{this.props.url.charAt(0).toUpperCase() + this.props.url.slice(1)} pop music.</h1>
-            </header>
                   <div className="container-fluid">
 
                       <div className="row">
                           <div className="col-8">
 
-                              <Select id="songsSelect" className="form-control" options={options} onChange={this.change} value={this.state.currentBlogPostIndex} >
+                              <Select id="songsSelect" className="form-select" options={options} onChange={this.change} value={this.state.currentBlogPostIndex} >
 
                               </Select>
                           </div>

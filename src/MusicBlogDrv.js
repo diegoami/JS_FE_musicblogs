@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MusicBlog from './MusicBlog.js';
 import NavTab from './NavTab.js';
+
 const blogs = ['italian', 'russian', 'french', 'polish', 'romanian', 'southslavic', 'easteurope']
 
 class MusicBlogDrv extends Component {

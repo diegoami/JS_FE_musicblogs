@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './BlogPost.css';
 
 
-
 class BlogPost extends React.Component {
 
     constructor() {
@@ -10,21 +9,36 @@ class BlogPost extends React.Component {
 
     }
 
+    render_you_tube(title, videoId) {
+        let linkYoutube  = 'https://www.youtube.com/embed/'+this.props.videoId+'?ecver=1'
+        let youtube = <iframe title={ this.props.title } src={ linkYoutube } frameBorder="0"  allow="autoplay; encrypted-media" allowFullScreen></iframe>
+        return (
+            <div className="videoWrapper">
+                {youtube}
+            </div>
+        )
+    }
+
+    render_data_frame(videoId) {
+        let linkAmara = 'http://www.youtube.com/watch?v='+this.props.videoId
+
+        return (
+            <div class="amara-embed" data-height="480px" data-width="854px" data-url={linkAmara}></div>
+        )
+    }
     render() {
 
 
         let content = this.props.content
-        let linkYoutube  = 'https://www.youtube.com/embed/'+this.props.videoId+'?ecver=1'
-        let youtube = <iframe title={ this.props.title } src={ linkYoutube } frameBorder="0"  allow="autoplay; encrypted-media" allowFullScreen></iframe>
+
         let textarea =  <textarea disabled cols="42" rows="35"  value={content}></textarea>
+
+
         return (
             <div className="container-fluid">
                  <div className="row">
                      <div className="col-8">
-
-                                <div className="videoWrapper">
-                                    {youtube}
-                                </div>
+                         { this.render_you_tube(this.props.title, this.props.videoId) }
                      </div>
                      <div className="col-2">
 

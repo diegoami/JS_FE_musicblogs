@@ -69,10 +69,10 @@ class MusicBlog extends Component {
     render() {
         let currentBlogPost = this.state.blogPosts[this.state.currentBlogPostIndex]
         let options = this.state.blogPosts.map(function(blogPost, index) { return { value: index, label: blogPost['title']  } })
-        let subtitled = "Blog"
+        let subtitled = ""
         if (this.state.currentBlogPostIndex > -1) {
             if (this.state.blogPosts[this.state.currentBlogPostIndex]["subtitled"]) {
-                subtitled = "Subtitles"
+                subtitled += " (Subtitled)"
             }
         }
         return (
@@ -80,25 +80,29 @@ class MusicBlog extends Component {
                   <div className="container-fluid">
 
                       <div className="row">
-                          <div className="col-8">
+                          <div className="col-7">
 
                               <Select id="songsSelect" className="form-select" options={options} onChange={this.change} value={this.state.currentBlogPostIndex} >
 
                               </Select>
                           </div>
                           <div className="col-1">
-                              <Button  bsStyle="primary" bsSize="small" onClick={() => {if (this.state.currentBlogPostIndex > -1) window.open(this.state.blogPosts[this.state.currentBlogPostIndex]["url"], "_blank")}}  >
-                                   {subtitled}
-                              </Button>
-                          </div>
 
-                          <div className="col-1"></div>
-                          <div className="col-1">
-
-                              <Button  bsStyle="secondary" bsSize="small" onClick={this.random_post}  >
+                              <Button  size="lg"  onClick={this.random_post}  >
                                   Random
                               </Button>
                           </div>
+                          <div className="col-1">
+
+                          </div>
+
+                          <div className="col-1">
+                              <Button  size="lg" onClick={() => {if (this.state.currentBlogPostIndex > -1) window.open(this.state.blogPosts[this.state.currentBlogPostIndex]["url"], "_blank")}}  >
+                                   On Blog {subtitled}
+                              </Button>
+                          </div>
+
+
                       </div>
 
                    </div>

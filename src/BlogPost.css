@@ -28,10 +28,32 @@
     height: auto
 }
 
+
+textarea {
+    font-size: 1.2em;
+}
+
+
+.col-2 {
+    padding-left: 15px;
+}
+
+.col-8 {
+    padding-right: 15px;
+}
+
 @media only screen and (max-width: 1150px) {
     textarea {
         font-size: 1.1em;
     }
+    .col-2 {
+        padding-left: 13px;
+    }
+
+    .col-8 {
+        padding-right: 13px;
+    }
+
 }
 
 
@@ -39,17 +61,41 @@
     textarea {
         font-size: 1em;
     }
+    .col-2 {
+        padding-left: 12px;
+    }
+
+    .col-8 {
+        padding-right: 12px;
+    }
+
 }
 
 @media only screen and (max-width: 900px) {
     textarea {
         font-size: 0.9em;
     }
+
+    .col-2 {
+        padding-left: 10px;
+    }
+
+    .col-8 {
+        padding-right: 10px;
+    }
+
 }
 
 @media only screen and (max-width: 800px) {
     textarea {
         font-size: 0.8em;
+    }
+    .col-2 {
+        padding-left: 9px;
+    }
+
+    .col-8 {
+        padding-right: 9px;
     }
 }
 
@@ -57,11 +103,25 @@
     textarea {
         font-size: 0.6em;
     }
+    .col-2 {
+        padding-left: 8px;
+    }
+
+    .col-8 {
+        padding-right: 8px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     textarea {
         font-size: 0.5em;
+    }
+    .col-2 {
+        padding-left: 7px;
+    }
+
+    .col-8 {
+        padding-right: 7px;
     }
 }
 
@@ -69,11 +129,26 @@
     textarea {
         font-size: 0.4em;
     }
+
+    .col-2 {
+        padding-left: 6px;
+    }
+
+    .col-8 {
+        padding-right: 6px;
+    }
 }
 
 @media only screen and (max-width: 400px) {
     textarea {
         font-size: 0.3em;
+    }
+    .col-2 {
+        padding-left: 5px;
+    }
+
+    .col-8 {
+        padding-right: 5px;
     }
 }
 

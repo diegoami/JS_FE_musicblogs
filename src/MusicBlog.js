@@ -106,6 +106,7 @@ class MusicBlog extends Component {
                       </div>
 
                    </div>
+              <hr />
               {(currentBlogPost != null) &&
               <p className="MusicBlog-post">
                     <BlogPost index={this.state.currentBlogPostIndex} {...currentBlogPost}  />

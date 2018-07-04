@@ -23,9 +23,7 @@ class BlogPost extends React.Component {
         let linkAmara = 'http://www.youtube.com/watch?v='+videoId
 
         return (
-            <div className="videoWrapper">
-               <div class="amara-embed" data-height="480px" data-width="854px" data-url={linkAmara}></div>
-            </div>
+               <div class="amara-embed videoWrapper"  data-url={linkAmara}></div>
         )
     }
     render() {

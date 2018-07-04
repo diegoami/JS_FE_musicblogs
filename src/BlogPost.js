@@ -31,7 +31,7 @@ class BlogPost extends React.Component {
 
         let content = this.props.content
 
-        let textarea =  <textarea disabled cols="42" rows="35"  value={content}></textarea>
+        let textarea =  <textarea disabled cols="42" rows="32"  value={content}></textarea>
 
 
         return (

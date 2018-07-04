@@ -47,7 +47,7 @@ class MusicBlog extends Component {
         this.setState({
             loading: true
         });
-        let url = this.endpoint+this.props.url
+        let url = this.endpoint+this.props.url+".json"
         fetch(url)
             .then(res => res.json())
             .then(data => {

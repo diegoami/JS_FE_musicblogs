@@ -20,10 +20,12 @@ class BlogPost extends React.Component {
     }
 
     render_data_frame(videoId) {
-        let linkAmara = 'http://www.youtube.com/watch?v='+this.props.videoId
+        let linkAmara = 'http://www.youtube.com/watch?v='+videoId
 
         return (
-            <div class="amara-embed" data-height="480px" data-width="854px" data-url={linkAmara}></div>
+            <div className="videoWrapper">
+               <div class="amara-embed" data-height="480px" data-width="854px" data-url={linkAmara}></div>
+            </div>
         )
     }
     render() {
@@ -31,14 +33,14 @@ class BlogPost extends React.Component {
 
         let content = this.props.content
 
-        let textarea =  <textarea disabled cols="42" rows="32"  value={content}></textarea>
+        let textarea =  <textarea disabled cols="42" rows="32" value={content}></textarea>
 
 
         return (
             <div className="container-fluid">
                  <div className="row">
                      <div className="col-8">
-                         { this.render_you_tube(this.props.title, this.props.videoId) }
+                         { this.render_data_frame( this.props.videoId) }
                      </div>
                      <div className="col-2">
 

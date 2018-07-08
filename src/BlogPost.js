@@ -1,52 +1,47 @@
 import React, { Component } from 'react';
 import './BlogPost.css';
-
+import { filter } from 'lodash';
+import YouTube from 'react-youtube';
+import Subtitles from './Subtitles.js'
 
 class BlogPost extends React.Component {
 
     constructor() {
         super();
-
+        this.updatePlayer = this.updatePlayer.bind(this);
     }
 
-    render_you_tube(title, videoId) {
-        let linkYoutube  = 'https://www.youtube.com/embed/'+this.props.videoId+'?ecver=1'
-        let youtube = <iframe title={ this.props.title } src={ linkYoutube } frameBorder="0"  allow="autoplay; encrypted-media" allowFullScreen></iframe>
-        return (
-            <div className="videoWrapper">
-                {youtube}
-            </div>
-        )
+    updatePlayer(event) {
+        let player = event.target;
+        this._subtitles.playerReady(player);
     }
 
-    render_data_frame(videoId) {
-        let linkAmara = 'http://www.youtube.com/watch?v='+this.props.videoId
-
-        return (
-            <div class="amara-embed" data-height="480px" data-width="854px" data-url={linkAmara}></div>
-        )
-    }
     render() {
-
-
-        let content = this.props.content
-
-        let textarea =  <textarea disabled cols="42" rows="32"  value={content}></textarea>
-
+        const opts = {
+            allowFullScreen: true,
+        };
+        console.log(this.props.subtitles_objs)
 
         return (
             <div className="container-fluid">
                  <div className="row">
                      <div className="col-8">
-                         { this.render_you_tube(this.props.title, this.props.videoId) }
+                        <div className="videoWrapper">
+                            <YouTube videoId={ this.props.videoId }  opts={opts} onReady={this.updatePlayer.bind(this)}/>
+
+                        </div>
+                         <Subtitles subtitles_objs={this.props.subtitles_objs} ref={(subtitles) => { this._subtitles = subtitles; }} />
                      </div>
+
                      <div className="col-2">
 
                         <div className="content">
-                                      { textarea }
+                            <textarea disabled cols="42" rows="32"  value={this.props.content}></textarea>
                         </div>
                      </div>
 
+                 </div>
+                 <div className="row">
                  </div>
             </div>
             )

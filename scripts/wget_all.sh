@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function do_wget {
-    wget "http://www.techcontroversy.com:3001/$1" -O "../public/$1.json"
+    wget "http://localhost:3001/$1" -O "../public/$1.json"
 }
 
 do_wget "french"

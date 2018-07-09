@@ -9,19 +9,23 @@ import Select from 'react-virtualized-select';
 import 'react-select/dist/react-select.css';
 import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
+const RANDOM_TRIES = 10;
+
 class MusicBlog extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+
         this.state = {
             blogPosts: [],
-            artists: [],
             currentBlogPostIndex : -1,
             currentBlogPost: null,
             loading: false,
-            dropdownOpen: false
+            dropdownOpen: false,
+            tries: props.tries
         };
         this.endpoint = process.env.REACT_APP_NODE_ENDPOINT
+
 
     }
 
@@ -32,9 +36,24 @@ class MusicBlog extends Component {
     }
 
 
+    get_random_index(blogPosts, tries) {
+        var l_tries = tries
+        let found = false;
+        var randomIndex  = -1;
+        while (l_tries  > 0 && !found ) {
+            randomIndex = Math.floor(Math.random()*blogPosts.length)
+            if (this.state.blogPosts[randomIndex]["subtitled"]) {
+                found = true;
+            }
+            l_tries -= 1
+        }
+        return randomIndex;
+
+    }
+
     random_post = e => {
         this.setState(prevState => ({
-            currentBlogPostIndex : Math.floor(Math.random()*prevState.blogPosts.length)
+            currentBlogPostIndex : this.get_random_index(prevState.blogPosts , prevState.tries)
         }))
     }
 
@@ -44,9 +63,6 @@ class MusicBlog extends Component {
             loading: true
         });
 
-        this.setState({
-            loading: true
-        });
         let url = this.endpoint+this.props.url+".json"
         fetch(url)
             .then(res => res.json())
@@ -54,27 +70,19 @@ class MusicBlog extends Component {
                 var blogPosts = Object.keys(data["posts"]).map(function (i) {
                     return data["posts"][i];
                 });
-                var artists = Object.keys(data["labels"]).map(function (i) {
-                    return data["labels"][i];
-                });
                 this.setState({
                     blogPosts : blogPosts,
-                    artists: artists,
-                    currentBlogPostIndex: Math.floor(Math.random()*blogPosts.length),
-                    loading: false
+                    loading: false,
+                    tries: this.props.tries
                 });
             })
+            .then(this.random_post)
+
     }
 
     render() {
         let currentBlogPost = this.state.blogPosts[this.state.currentBlogPostIndex]
         let options = this.state.blogPosts.map(function(blogPost, index) { return { value: index, label: blogPost['title']  } })
-        let subtitled = ""
-        if (this.state.currentBlogPostIndex > -1) {
-            if (this.state.blogPosts[this.state.currentBlogPostIndex]["subtitled"]) {
-                subtitled += " (Subtitled)"
-            }
-        }
         return (
           <div className="MusicBlog">
                   <div className="container-fluid">
@@ -98,7 +106,7 @@ class MusicBlog extends Component {
 
                           <div className="col-1">
                               <Button  size="lg" onClick={() => {if (this.state.currentBlogPostIndex > -1) window.open(this.state.blogPosts[this.state.currentBlogPostIndex]["url"], "_blank")}}  >
-                                   On Blog {subtitled}
+                                   On Blog
                               </Button>
                           </div>
 

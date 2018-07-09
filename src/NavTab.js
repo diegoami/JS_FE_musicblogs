@@ -9,14 +9,9 @@ class NavTab extends Component {
             <div>
                 <p><h2>Select music from:</h2>
                     <Nav tabs>
-                        <NavItem>
-                            <NavLink href="/italian" active={this.props.active == 'italian'} >Italy</NavLink>
-                        </NavItem>
+
                         <NavItem>
                             <NavLink href="/russian" active={this.props.active == 'russian'}>Russia/Ukraine</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="/french" active={this.props.active == 'french'}>France</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="/polish" active={this.props.active == 'polish'}>Poland</NavLink>
@@ -29,6 +24,12 @@ class NavTab extends Component {
                         </NavItem>
                         <NavItem>
                             <NavLink href="/easteurope" active={this.props.active == 'easteurope'}>Central Europe</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/french" active={this.props.active == 'french'}>France</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/italian" active={this.props.active == 'italian'} >Italy</NavLink>
                         </NavItem>
                     </Nav>
                 </p>

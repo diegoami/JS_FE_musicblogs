@@ -39,7 +39,7 @@ class Subtitles extends React.Component {
             })
             if (sub_correct.length > 0) {
                 this.setState({text: sub_correct[0]["text"]})
-                console.log(sub_correct[0]["text"])
+
             } else {
                 this.setState({text: ""})
             }

@@ -9,12 +9,19 @@ class BlogPost extends React.Component {
     constructor() {
         super();
         this.updatePlayer = this.updatePlayer.bind(this);
+        this.playPlayer = this.playPlayer.bind(this);
     }
 
     updatePlayer(event) {
         let player = event.target;
         this._subtitles.playerReady(player);
     }
+
+    playPlayer(event) {
+        let player = event.target;
+        player.videoId = this.props.videoId
+    }
+
 
     render() {
         const opts = {
@@ -27,7 +34,9 @@ class BlogPost extends React.Component {
                  <div className="row">
                      <div className="col-8">
                         <div className="videoWrapper">
-                            <YouTube videoId={ this.props.videoId }  opts={opts} onReady={this.updatePlayer.bind(this)}/>
+                            <YouTube videoId={ this.props.videoId }  opts={opts}
+                                     onReady={this.updatePlayer.bind(this)} onPlay={this.playPlayer.bind(this)}
+                            />
 
                         </div>
                          <Subtitles subtitles_objs={this.props.subtitles_objs} ref={(subtitles) => { this._subtitles = subtitles; }} />

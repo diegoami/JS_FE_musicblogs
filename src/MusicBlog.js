@@ -22,7 +22,10 @@ class MusicBlog extends Component {
             currentBlogPost: null,
             loading: false,
             dropdownOpen: false,
-            tries: props.tries
+            tries: props.tries,
+            postId: props.postId,
+            blng: props.blng,
+            url: props.url
         };
         this.endpoint = process.env.REACT_APP_NODE_ENDPOINT
 
@@ -39,21 +42,36 @@ class MusicBlog extends Component {
     get_random_index(blogPosts, tries) {
         var l_tries = tries
         let found = false;
-        var randomIndex  = -1;
-        while (l_tries  > 0 && !found ) {
-            randomIndex = Math.floor(Math.random()*blogPosts.length)
-            if (this.state.blogPosts[randomIndex]["subtitled"]) {
+        var randomIndex = -1;
+        while (l_tries > 0 && !found) {
+            randomIndex = Math.floor(Math.random() * blogPosts.length)
+            if (blogPosts[randomIndex]["subtitled"]) {
                 found = true;
             }
             l_tries -= 1
         }
         return randomIndex;
+    }
 
+    get_postId_index(blogPosts, tries, postId) {
+        let index_found = this.state.blogPosts.findIndex(function (post) {
+            return post["postId"] == postId;
+        });
+        return index_found;
+
+    }
+
+    do_post = e => {
+        this.setState(prevState => ({
+            currentBlogPostIndex : prevState.postId
+                ? this.get_postId_index(prevState.blogPosts , prevState.tries, prevState.postId)
+                : this.get_random_index(prevState.blogPosts , prevState.tries)
+        }))
     }
 
     random_post = e => {
         this.setState(prevState => ({
-            currentBlogPostIndex : this.get_random_index(prevState.blogPosts , prevState.tries)
+            currentBlogPostIndex : this.get_random_index(prevState.blogPosts , prevState.tries, prevState.postId)
         }))
     }
 
@@ -63,7 +81,7 @@ class MusicBlog extends Component {
             loading: true
         });
 
-        let url = 'http://'+ window.location.host+'/'+this.props.url+".json"
+        let url = 'http://'+ window.location.host+'/'+this.props.blng+".json"
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -73,10 +91,11 @@ class MusicBlog extends Component {
                 this.setState({
                     blogPosts : blogPosts,
                     loading: false,
-                    tries: this.props.tries
+                    tries: this.props.tries,
+                    postId: this.props.postId
                 });
             })
-            .then(this.random_post)
+            .then(this.do_post)
 
     }
 
@@ -117,8 +136,9 @@ class MusicBlog extends Component {
               <hr />
               {(currentBlogPost != null) &&
               <p className="MusicBlog-post">
-                    <BlogPost index={this.state.currentBlogPostIndex} {...currentBlogPost}  />
+                    <BlogPost blng={this.props.blng} index={this.state.currentBlogPostIndex} {...currentBlogPost}  />
               </p>
+
           }
           </div>
     );

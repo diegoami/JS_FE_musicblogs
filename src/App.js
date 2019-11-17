@@ -14,9 +14,10 @@ class App extends Component {
 
                 <Router>
                     <div className="App">
-                        <Route exact path={'/:blogLng/:tries'} component={MusicBlogDrv} />
+                        <Route exact path={'/:blng/tries/:tries'} component={MusicBlogDrv} />
+                        <Route exact path={'/:blng/postid/:postId'} component={MusicBlogDrv} />
 
-                        <Route exact path={'/:blogLng'} component={MusicBlogDrv} />
+                        <Route exact path={'/:blng'} component={MusicBlogDrv} />
                         <Route exact path={'/'} component={MusicBlogDrv} />
 
                     </div>

@@ -8,6 +8,7 @@ class NavTab extends Component {
         return (
             <div>
                 <p><h2>Select music from:</h2>
+
                     <Nav tabs>
 
                         <NavItem>

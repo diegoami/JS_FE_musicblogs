@@ -1,5 +1,7 @@
 .subtitle_yt {
+    vertical-align: text-top;
     font-size: 2em;
+
 }
 
 
@@ -69,4 +71,10 @@
 
 .subtitle_div {
     text-align: center;
+
+}
+
+.link_div {
+    float: left
+
 }

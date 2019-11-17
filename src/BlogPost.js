@@ -30,6 +30,7 @@ class BlogPost extends React.Component {
         console.log(this.props.subtitles_objs)
 
         return (
+
             <div className="container-fluid">
                  <div className="row">
                      <div className="col-8">
@@ -39,7 +40,8 @@ class BlogPost extends React.Component {
                             />
 
                         </div>
-                         <Subtitles subtitles_objs={this.props.subtitles_objs} ref={(subtitles) => { this._subtitles = subtitles; }} />
+                         <Subtitles direct_lnk={'http://'+ window.location.host+'/'+this.props.blng+'/postid/'+this.props.postId} subtitles_objs={this.props.subtitles_objs} ref={(subtitles) => { this._subtitles = subtitles; }} />
+
                      </div>
 
                      <div className="col-2">

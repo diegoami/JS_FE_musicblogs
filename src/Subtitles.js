@@ -36,8 +36,13 @@ class Subtitles extends React.Component {
         if (this.state.player && this.state.player.getCurrentTime && this.props.subtitles_objs) {
             let currentTime = this.state.player.getCurrentTime();
             let sub_correct = filter(this.props.subtitles_objs, function(s) {
-                return s["px_start"] && s["px_end"] &&  (s["px_start"] < currentTime) && ( s["px_end"] > currentTime );
-            })
+                return s["text"]
+                    &&  (s["px_start"] <= currentTime)
+                    &&  (s["px_end"] >= currentTime)
+                    &&  (s["px_end"] - s["px_start"] >= 0.1)
+                    &&  (s["px_end"] - s["px_start"] < 100)
+
+            });
             if (sub_correct.length > 0) {
                 this.setState({text: sub_correct[0]["text"]})
 

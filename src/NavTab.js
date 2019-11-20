@@ -7,8 +7,6 @@ class NavTab extends Component {
     render() {
         return (
             <div>
-                <p><h2>Select music from:</h2>
-
                     <Nav tabs>
 
                         <NavItem>
@@ -33,8 +31,6 @@ class NavTab extends Component {
                             <NavLink href="/italian" active={this.props.active == 'italian'} >Italy</NavLink>
                         </NavItem>
                     </Nav>
-                </p>
-
             </div>
 
         );

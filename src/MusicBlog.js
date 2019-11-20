@@ -100,7 +100,18 @@ class MusicBlog extends Component {
     }
 
     render() {
-        let currentBlogPost = this.state.blogPosts[this.state.currentBlogPostIndex]
+        let currentBlogPost
+        let current_url
+        let current_postId
+        let direct_lnk
+        if (this.state.currentBlogPostIndex > -1) {
+            currentBlogPost = this.state.blogPosts[this.state.currentBlogPostIndex]
+            current_url = currentBlogPost["url"]
+            current_postId = currentBlogPost["postId"]
+
+            direct_lnk = 'http://'+ window.location.host+'/'+this.props.blng+'/postid/'+current_postId
+        }
+
         let options = this.state.blogPosts.map(function(blogPost, index) { return { value: index, label: blogPost['title']  } })
         return (
           <div className="MusicBlog">
@@ -116,16 +127,19 @@ class MusicBlog extends Component {
                           <div className="col-1">
 
                               <Button  size="lg"  onClick={this.random_post}  >
-                                  Random
+                                  <img src="/images/random.png"  />
+                              </Button>
+                          </div>
+
+
+                          <div className="col-1">
+                              <Button  size="lg"  onClick={() => {window.open(current_url, "_blank")}} >
+                                  <img src="/images/blog.png" href={current_url} />
                               </Button>
                           </div>
                           <div className="col-1">
-
-                          </div>
-
-                          <div className="col-1">
-                              <Button  size="lg" onClick={() => {if (this.state.currentBlogPostIndex > -1) window.open(this.state.blogPosts[this.state.currentBlogPostIndex]["url"], "_blank")}}  >
-                                   On Blog
+                              <Button  size="lg"  >
+                                  <img src="/images/share.png" onClick={() => {window.open(direct_lnk, "_blank")}}/>
                               </Button>
                           </div>
 

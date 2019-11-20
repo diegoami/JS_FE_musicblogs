@@ -8,6 +8,12 @@ MusicBlog-post {
 
 .btn {
     font-size: 1.1em;
+    padding: 0;
+}
+
+img {
+    height: 48px;
+    width: 48px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -20,58 +26,79 @@ MusicBlog-post {
     }
 
     .col-1 {
-        padding-left: 13px;
-        padding-right: 13px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
+
+    img {
+        height: 45px;
+        width: 45px;
+    }
+
 }
 @media only screen and (max-width: 800px) {
     .Select {
-        font-size: 1em;
-    }
-
-    .btn {
-        font-size: 0.9em;
-    }
-
-    .col-1 {
-        padding-left: 11px;
-        padding-right: 11px;
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    .Select {
         font-size: 0.9em;
     }
 
     .btn {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     .col-1 {
         padding-left: 9px;
         padding-right: 9px;
     }
+
+    img {
+        height: 42px;
+        width: 42px;
+    }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .Select {
         font-size: 0.8em;
     }
 
     .btn {
-        font-size: 0.7em;
+        font-size: 0.8em;
     }
 
     .col-1 {
         padding-left: 7px;
         padding-right: 7px;
     }
+
+    img {
+        height: 39px;
+        width: 39px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Select {
+        font-size: 0.7em;
+    }
+
+    .btn {
+        font-size: 0.7em;
+    }
+
+    .col-1 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    img {
+        height: 36px;
+        width: 36px;
+    }
 }
 
 @media only screen and (max-width: 500px) {
     .Select {
-        font-size: 0.7em;
+        font-size: 0.6em;
     }
 
     .btn {
@@ -79,14 +106,19 @@ MusicBlog-post {
     }
 
     .col-1 {
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    img {
+        height: 32px;
+        width: 32px;
     }
 }
 
 @media only screen and (max-width: 400px) {
     .Select {
-        font-size: 0.6em;
+        font-size: 0.5em;
     }
 
     .btn {
@@ -94,7 +126,12 @@ MusicBlog-post {
     }
 
     .col-1 {
-        padding-left: 3px;
-        padding-right: 3px;
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+
+    img {
+        height: 28px;
+        width: 28px;
     }
 }

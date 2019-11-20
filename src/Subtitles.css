@@ -7,21 +7,30 @@
 
 @media only screen and (max-width: 1180px) {
     .subtitle_yt {
-        font-size: 1.9em;
+        font-size: 1.8em;
+    }
+    .link_div {
+        font-size: 0.9em;
     }
 
 }
 
 @media only screen and (max-width: 1024px) {
     .subtitle_yt {
-        font-size: 1.8em;
+        font-size: 1.6em;
+    }
+    .link_div {
+        font-size: 0.8em;
     }
 
 }
 
 @media only screen and (max-width: 900px) {
     .subtitle_yt {
-        font-size: 1.7em;
+        font-size: 1.4em;
+    }
+    .link_div {
+        font-size: 0.7em;
     }
 
 }
@@ -29,26 +38,35 @@
 
 @media only screen and (max-width: 800px) {
     .subtitle_yt {
-        font-size: 1.6em;
+        font-size: 1.2em;
+    }
+    .link_div {
+        font-size: 0.6em;
     }
 }
 
 @media only screen and (max-width: 700px) {
     .subtitle_yt {
-        font-size: 1.6em;
+        font-size: 1em;
+    }
+    .link_div {
+        font-size: 0.5em;
     }
 }
 
 @media only screen and (max-width: 600px) {
     .subtitle_yt {
-        font-size: 1.5em;
+        font-size: 0.9em;
     }
 }
 
 
 @media only screen and (max-width: 500px) {
     .subtitle_yt {
-        font-size: 1.4em;
+        font-size: 0.8em;
+    }
+    .link_div {
+        font-size: 0.4em;
     }
 }
 
@@ -57,6 +75,9 @@
     .subtitle_yt {
         font-size: 1.3em;
     }
+    .link_div {
+        font-size: 0.3em;
+    }
 }
 
 
@@ -64,9 +85,10 @@
     .subtitle_yt {
         font-size: 1.2em;
     }
+    .link_div {
+        font-size: 0.2em;
+    }
 }
-
-
 
 
 .subtitle_div {

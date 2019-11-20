@@ -70,7 +70,6 @@ class Subtitles extends React.Component {
         return (
             <div>
                 <div className="subtitle_plus_link">
-                    <a className="link_div" href={this.props.direct_lnk} target={"_blank"}>Direct Link</a>
                     <div className="subtitle_div">
                         <span class="subtitle_yt">{this.state.text}</span>
                     </div>

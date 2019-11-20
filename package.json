@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-mdl": "^1.11.0",

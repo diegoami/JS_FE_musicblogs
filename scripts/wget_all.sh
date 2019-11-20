@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function do_wget {
-    /usr/bin/wget "http://www.techcontroversy.com:3001/$1" -O "../public/$1.json"
+    /usr/bin/wget "http://18.194.147.93:3001/$1" -O "../public/$1.json"
 }
 
 do_wget "french"

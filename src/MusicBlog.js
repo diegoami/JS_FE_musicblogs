@@ -4,12 +4,11 @@ import './MusicBlog.css';
 
 import BlogPost from './BlogPost.js';
 
-import { Button } from 'reactstrap';
+import {Button, Nav, Tooltip} from 'reactstrap';
 import Select from 'react-virtualized-select';
 import 'react-select/dist/react-select.css';
 import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
-const RANDOM_TRIES = 10;
 
 class MusicBlog extends Component {
 
@@ -40,7 +39,7 @@ class MusicBlog extends Component {
 
 
     get_random_index(blogPosts, tries) {
-        var l_tries = tries
+        var l_tries = tries;
         let found = false;
         var randomIndex = -1;
         while (l_tries > 0 && !found) {
@@ -55,7 +54,7 @@ class MusicBlog extends Component {
 
     get_postId_index(blogPosts, tries, postId) {
         let index_found = this.state.blogPosts.findIndex(function (post) {
-            return post["postId"] == postId;
+            return post["postId"] === postId;
         });
         return index_found;
 
@@ -92,7 +91,8 @@ class MusicBlog extends Component {
                     blogPosts : blogPosts,
                     loading: false,
                     tries: this.props.tries,
-                    postId: this.props.postId
+                    postId: this.props.postId,
+                    selectToggle: false
                 });
             })
             .then(this.do_post)
@@ -118,28 +118,32 @@ class MusicBlog extends Component {
                   <div className="container-fluid">
 
                       <div className="row">
-                          <div className="col-7">
+                          <div className="col-7" id="songDiv">
 
                               <Select id="songsSelect" className="form-select" options={options} onChange={this.change} value={this.state.currentBlogPostIndex} >
 
                               </Select>
+                              <Tooltip className="tooltip bigtooltip" placement="bottom" isOpen={this.state.selectToggle} target="songDiv" toggle={e => {this.setState(prevState => ({ selectToggle: !prevState.selectToggle}))}}>
+                                  Select a song or type to search
+                              </Tooltip>
                           </div>
+
                           <div className="col-1">
 
                               <Button  size="lg"  onClick={this.random_post}  >
-                                  <img src="/images/random.png"  />
+                                  <img src="/images/random.png"  title="Random song" alt="Rnd"/>
                               </Button>
                           </div>
 
 
                           <div className="col-1">
                               <Button  size="lg"  onClick={() => {window.open(current_url, "_blank")}} >
-                                  <img src="/images/blog.png" href={current_url} />
+                                  <img src="/images/blog.png" href={current_url} alt="Blog" title="Go to blog page" />
                               </Button>
                           </div>
                           <div className="col-1">
                               <Button  size="lg"  >
-                                  <img src="/images/share.png" onClick={() => {window.open(direct_lnk, "_blank")}}/>
+                                  <img src="/images/share.png" title="Share link" alt="Share" onClick={() => {window.open(direct_lnk, "_blank")}}/>
                               </Button>
                           </div>
 

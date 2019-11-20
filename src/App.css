@@ -9,3 +9,18 @@ footer {
     font-size: 0.8em;
 
 }
+
+.bigtooltip [class$="inner"] {
+    max-width: 300px !important;
+    width: 350px;
+}
+
+.tooltip [class$="inner"] {
+    background-color: grey;
+    border: 1px solid grey;
+}
+
+.tooltip [class$="arrow"] {
+    border-top: 5px solid grey !important;
+
+}

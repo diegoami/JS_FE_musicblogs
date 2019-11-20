@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Subtitles.css';
 import { filter } from 'lodash';
 
@@ -59,14 +59,7 @@ class Subtitles extends React.Component {
 
 
     render() {
-        let to_render;
-        if (this.state.text) {
-            to_render = <div className="subtitle_div">
-                             <span class="subtitle_yt">{this.state.text}</span>
-                        </div>
-        } else {
-            to_render = <a href={this.props.direct_lnk} target={"_blank"}>Direct Link</a>
-        }
+
         return (
             <div>
                 <div className="subtitle_plus_link">

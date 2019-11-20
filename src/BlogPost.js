@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './BlogPost.css';
-import { filter } from 'lodash';
 import YouTube from 'react-youtube';
 import Subtitles from './Subtitles.js'
 

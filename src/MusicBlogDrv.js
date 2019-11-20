@@ -4,11 +4,13 @@ import NavTab from './NavTab.js';
 
 const blogs = [ 'russian', 'polish', 'romanian', 'southslavic']
 
+const RANDOM_TRIES = 8;
+
 class MusicBlogDrv extends Component {
 
     render() {
         var blng = blogs[Math.floor(Math.random()*blogs.length)]
-        var tries = 10;
+        var tries = RANDOM_TRIES;
         var postId = null
         if (this.props.match && this.props.match.params && this.props.match.params.blng) {
             blng = this.props.match.params.blng

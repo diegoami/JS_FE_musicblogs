@@ -33,14 +33,14 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: auto
-}
-
-
-textarea {
+    height: auto;
     font-size: 1.2em;
+    white-space: pre;
 }
 
+.currentLine {
+    background-color: lightgray;
+}
 
 .col-2 {
     padding-left: 15px;

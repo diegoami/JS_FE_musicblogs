@@ -11,9 +11,18 @@ MusicBlog-post {
     padding: 0;
 }
 
+.btn:hover {
+    cursor:pointer
+}
+
 img {
     height: 48px;
     width: 48px;
+    cursor: pointer;
+}
+
+img:hover {
+    cursor:pointer
 }
 
 @media only screen and (max-width: 1000px) {

@@ -123,7 +123,7 @@ class MusicBlog extends Component {
                               <Select id="songsSelect" className="form-select" options={options} onChange={this.change} value={this.state.currentBlogPostIndex} >
 
                               </Select>
-                              <Tooltip className="tooltip bigtooltip" placement="bottom" isOpen={this.state.selectToggle} target="songDiv" toggle={e => {this.setState(prevState => ({ selectToggle: !prevState.selectToggle}))}}>
+                              <Tooltip className="tooltip bigtooltip" placement="top" isOpen={this.state.selectToggle} target="songDiv" toggle={e => {this.setState(prevState => ({ selectToggle: !prevState.selectToggle}))}}>
                                   Select a song or type to search
                               </Tooltip>
                           </div>
@@ -131,7 +131,7 @@ class MusicBlog extends Component {
                           <div className="col-1">
 
                               <Button  size="lg"  onClick={this.random_post}  >
-                                  <img src="/images/random.png"  title="Random song" alt="Rnd"/>
+                                  <img src="/images/random.png"  title="Random song" alt="Rnd" />
                               </Button>
                           </div>
 

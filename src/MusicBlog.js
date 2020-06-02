@@ -109,7 +109,7 @@ class MusicBlog extends Component {
             current_url = currentBlogPost["url"]
             current_postId = currentBlogPost["postId"]
 
-            direct_lnk = 'http://'+ window.location.host+'/'+this.props.blng+'/postid/'+current_postId
+            direct_lnk = window.location.protocol+'//'+ window.location.host+'/'+this.props.blng+'/postid/'+current_postId
         }
 
         let options = this.state.blogPosts.map(function(blogPost, index) { return { value: index, label: blogPost['title']  } })

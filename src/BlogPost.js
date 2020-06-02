@@ -109,7 +109,7 @@ class BlogPost extends React.Component {
                             />
 
                         </div>
-                         <Subtitles direct_lnk={'http://'+ window.location.host+'/'+this.props.blng+'/postid/'+this.props.postId} subtitles_objs={this.props.subtitles_objs} ref={(subtitles) => { this._subtitles = subtitles; }} />
+                         <Subtitles direct_lnk={window.location.protocol+'//'+ window.location.host+'/'+this.props.blng+'/postid/'+this.props.postId} subtitles_objs={this.props.subtitles_objs} ref={(subtitles) => { this._subtitles = subtitles; }} />
 
                      </div>
 

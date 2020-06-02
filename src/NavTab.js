@@ -17,7 +17,8 @@ class NavTab extends Component {
             nav_southslavic: false,
             nav_easteurope: false,
             nav_french: false,
-            nav_italian: false
+            nav_italian: false,
+            nav_tos: false
         }
     }
 
@@ -74,6 +75,13 @@ class NavTab extends Component {
                         <Tooltip className="tooltip" placement="bottom" isOpen={this.state.nav_italian} target="nav-italian" toggle={e => {this.setState(prevState => ({ nav_italian: !prevState.nav_italian}))}}>
                             Music from Italy
                         </Tooltip>
+                        <NavItem id="nav-tos">
+                            <NavLink href="/" active={this.props.active === 'tos'}>TOS</NavLink>
+                        </NavItem>
+                        <Tooltip className="tooltip" placement="bottom" isOpen={this.state.nav_tos} target="nav-tos" toggle={e => {this.setState(prevState => ({ nav_tos: !prevState.nav_tos}))}}>
+                            Terms of Service
+                        </Tooltip>
+
                     </Nav>
 
             </div>

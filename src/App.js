@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import MusicBlogDrv from './MusicBlogDrv.js';
+import Tos from './Tos.js';
 
 import { BrowserRouter as Router, Route} from "react-router-dom";
 import './App.css';
@@ -18,8 +19,8 @@ class App extends Component {
                         <Route exact path={'/:blng/postid/:postId'} component={MusicBlogDrv} />
 
                         <Route exact path={'/:blng'} component={MusicBlogDrv} />
-                        <Route exact path={'/'} component={MusicBlogDrv} />
-
+                        <Route exact path={'/'} component={Tos} />
+                        <Route exact path={'/tos'} component={Tos} />
                     </div>
                 </Router>
 

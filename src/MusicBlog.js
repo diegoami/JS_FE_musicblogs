@@ -80,7 +80,7 @@ class MusicBlog extends Component {
             loading: true
         });
 
-        let url = 'http://'+ window.location.host+'/'+this.props.blng+".json"
+        let url = window.location.protocol+'//'+ window.location.host+'/'+this.props.blng+".json"
         fetch(url)
             .then(res => res.json())
             .then(data => {

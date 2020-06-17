@@ -34,7 +34,8 @@ class Tos extends Component {
                 </ul>
                 <h2>Browsing Videos on this site</h2>
                 <p>This site does not require your personal information and does not save any cookies. However, youtube will track your history on this site, as if you were watching the videos on youtube.
-                    Therefore, <a href="https://policies.google.com/privacy">Google Privacy Policy</a> applies.</p>
+                    Therefore, <a href="https://policies.google.com/privacy">Google Privacy Policy</a> applies.
+                    <a href="https://www.youtube.com/static?template=terms">Youtube terms of service</a> also apply.</p>
                 <h2>Other</h2>
                 <p>This site has been created and is being maintained by Diego Amicabile (diego.amicabile at gmail.com).</p>
                 <p>Source code is available on <a href="https://github.com/diegoami/JS_FE_musicblogs">Github</a> </p>

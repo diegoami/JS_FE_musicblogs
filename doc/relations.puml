@@ -1,0 +1,27 @@
+In this
+
+
+
+@startuml
+
+Author --> Youtube : Find interesting song
+Author --> Internet : Find lyrics of song
+Author --> Blogspot : Create post containing song title, embedded youtube frame and song lyrics
+
+update_posts.py -> Blogspot : Retrieve youtube ids and blog posts
+update_posts.py --> Mongo_DB : Save youtube ids and blog posts
+
+update_posts.py --> Amara.org : Retrieve lyrics for youtube ids
+update_posts.py --> Mongo_DB : Save lyrics for youtube id
+
+verify_posts.py --> Mongo_DB : Retrieve youtube ids
+verify_posts.py --> Youtube_API : Check what youtube videos are no longer accessible
+verify_posts.py --> Github : Save report of accessible and unaccessible vidoes
+
+update_files.js --> Mongo_DB : Retrieve all posts ( + youtube ids, lyrics)
+update_files.js --> Europoplyrics : Send exports of posts in json format
+
+Europoplyrics --> Europoplyrics : load exports of posts in json format ( including youtube ids)
+Europoplyrics --> Europoplyrics : shows interactively youtube videos and lyrics
+
+@enduml

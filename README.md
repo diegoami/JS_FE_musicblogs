@@ -34,7 +34,7 @@ They also check against the Youtube API whether videos are still accessible, and
 
 ![Author Sequence Diagram](doc/updateposts_sq2.png)
 
-An export of all the posts, including youtube video ids and lyrics, is used by Europoplyrics site for browsing youtube videos.
+An export of all the posts, including youtube video ids and lyrics, is used by Europoplyrics site for browsing youtube videos, and, if available, showing them along with their lyrics.
 
 
 ![Author Sequence Diagram](doc/browse_videos_sq3.png)

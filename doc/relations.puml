@@ -11,15 +11,16 @@ Author --> Blogspot : Create post containing song title, embedded youtube frame 
 
 @startuml
 
-update_posts.py -> Blogspot : Retrieve youtube ids and blog posts
+update_posts.py --> Blogspot : Retrieve youtube ids and blog posts
 update_posts.py --> Mongo_DB : Save youtube ids and blog posts
 
 update_posts.py --> Amara.org : Retrieve lyrics for youtube ids
-update_posts.py --> Mongo_DB : Save lyrics for youtube id
+update_posts.py --> Mongo_DB : Save lyrics for youtube ids
 
-verify_posts.py --> Mongo_DB : Retrieve youtube ids
-verify_posts.py --> Youtube_API : Check what youtube videos are no longer accessible
-verify_posts.py --> Github : Save report of accessible and unaccessible videos
+update_posts.py --> Mongo_DB : Retrieve youtube ids
+update_posts.py --> Youtube_API : Check what youtube videos are no longer accessible
+update_posts.py --> Mongo_DB : Invalidate and delete videos unaccessible on youtube
+update_posts.py --> Blogspot  : Revert post with removed videos to draft
 @enduml
 
 @startuml
